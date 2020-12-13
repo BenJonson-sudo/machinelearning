@@ -63,7 +63,7 @@ def episode(q_value):
     state = START
 
     # choose an action based on epsilon-greedy algorithm
-    if np.random.binomial(1, EPSILON) == 1:
+    if np.random.binomial(1, EPSILON) == 1:  # 伯努利分布，试验一次，样本1个，返回发生epsilon概率的个数
         action = np.random.choice(ACTIONS)
     else:
         values_ = q_value[state[0], state[1], :]
